@@ -1,0 +1,174 @@
+{
+  "executedAt": "2026-10-06T16:45:38.735388+00:00",
+  "database": "registration_test",
+  "fixture": "fresh demo seed plus explicit synthetic variants",
+  "executor": "Codex automated; not group manual acceptance",
+  "results": [
+    {
+      "scenarioId": "A01",
+      "title": "错误、未知及空凭据",
+      "relatedCaseIds": [
+        "TC-AUTH-002"
+      ],
+      "status": "PASS",
+      "durationMs": 110,
+      "evidence": "wrong password, unknown name, empty credentials all rejected without valid identity"
+    },
+    {
+      "scenarioId": "A02",
+      "title": "跨角色和历史班访问拒绝",
+      "relatedCaseIds": [
+        "TC-SEC-001",
+        "TC-GRADE-008",
+        "TC-PRIV-001"
+      ],
+      "status": "PASS",
+      "durationMs": 92,
+      "evidence": "server role check and actor-derived ownership; no foreign grade access"
+    },
+    {
+      "scenarioId": "A03",
+      "title": "版本输入类型边界",
+      "relatedCaseIds": [
+        "TC-API-006"
+      ],
+      "status": "PASS",
+      "durationMs": 192,
+      "evidence": "string/null/fraction rejected; negative mismatches current version"
+    },
+    {
+      "scenarioId": "A04",
+      "title": "首次数量和重复班/课程",
+      "relatedCaseIds": [
+        "TC-REG-002",
+        "TC-REG-004",
+        "TC-REG-009"
+      ],
+      "status": "PASS",
+      "durationMs": 222,
+      "evidence": "first counts, duplicate offering, same course in primary; no partial enrollment"
+    },
+    {
+      "scenarioId": "A05",
+      "title": "F/I/未录入先修",
+      "relatedCaseIds": [
+        "TC-REG-006",
+        "TC-REG-007"
+      ],
+      "status": "PASS",
+      "durationMs": 595,
+      "evidence": "F / I / unrecorded predecessor each refused; entire formal schedule unchanged"
+    },
+    {
+      "scenarioId": "A06",
+      "title": "六种成绩与旧版本",
+      "relatedCaseIds": [
+        "TC-GRADE-001",
+        "TC-GRADE-005"
+      ],
+      "status": "PASS",
+      "durationMs": 370,
+      "evidence": "all 6 grades allowed; stale grade version cannot overwrite"
+    },
+    {
+      "scenarioId": "A07",
+      "title": "后项非法整批不提交",
+      "relatedCaseIds": [
+        "TC-GRADE-002"
+      ],
+      "status": "PASS",
+      "durationMs": 19,
+      "evidence": "invalid later item prevents earlier valid grade update"
+    },
+    {
+      "scenarioId": "A08",
+      "title": "两种人员更新/旧版本/SSN重复",
+      "relatedCaseIds": [
+        "TC-PEOPLE-001",
+        "TC-PEOPLE-002",
+        "TC-PEOPLE-010"
+      ],
+      "status": "PASS",
+      "durationMs": 314,
+      "evidence": "both person types created/updated; stale update rejected; SSN nonunique allowed"
+    },
+    {
+      "scenarioId": "A09",
+      "title": "人员字段非法变体",
+      "relatedCaseIds": [
+        "TC-PEOPLE-008",
+        "TC-PEOPLE-009",
+        "TC-PEOPLE-010",
+        "TC-PEOPLE-011"
+      ],
+      "status": "PASS",
+      "durationMs": 131,
+      "evidence": "blank name, future birthday, malformed SSN/status, unknown field, date order, blank department"
+    },
+    {
+      "scenarioId": "A10",
+      "title": "重置密码撤销全部旧会话",
+      "relatedCaseIds": [
+        "TC-AUTH-006",
+        "TC-PEOPLE-013"
+      ],
+      "status": "PASS",
+      "durationMs": 749,
+      "evidence": "all prior sessions revoked, new temporary password works and requires change; no plaintext recorded"
+    },
+    {
+      "scenarioId": "A11",
+      "title": "删除保留历史且禁用会话",
+      "relatedCaseIds": [
+        "TC-PEOPLE-003",
+        "TC-PEOPLE-013"
+      ],
+      "status": "PASS",
+      "durationMs": 220,
+      "evidence": "logical deletion disables account; both historical enrollments and grades retained"
+    },
+    {
+      "scenarioId": "A12",
+      "title": "人员创建中途失败回滚",
+      "relatedCaseIds": [
+        "TC-PEOPLE-007",
+        "TC-DB-004"
+      ],
+      "status": "PASS",
+      "durationMs": 180,
+      "evidence": "person insert failure rolls back person+account together"
+    },
+    {
+      "scenarioId": "A13",
+      "title": "目录源故障与十秒预算",
+      "relatedCaseIds": [
+        "TC-CAT-004",
+        "TC-CAT-005"
+      ],
+      "status": "PASS",
+      "durationMs": 9093,
+      "evidence": {
+        "frozenReadsUnaffected": true,
+        "timeoutSeconds": 9.009,
+        "note": "request budget9s leaves headroom for10s overall target; real legacy database not tested"
+      }
+    },
+    {
+      "scenarioId": "A14",
+      "title": "1212班SQL分页与过滤",
+      "relatedCaseIds": [
+        "TC-CAT-002",
+        "TC-API-003"
+      ],
+      "status": "PASS",
+      "durationMs": 2737,
+      "evidence": {
+        "total": 1212,
+        "pages": 61,
+        "noMissingOrDuplicate": true,
+        "professorEligibilityFiltered": true,
+        "fixture": "600 synthetic courses / 1200 extra offerings in isolated test DB"
+      }
+    }
+  ]
+}

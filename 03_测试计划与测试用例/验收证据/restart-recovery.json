@@ -1,0 +1,52 @@
+{
+  "executedAt": "2026-10-06T16:55:33.690993+00:00",
+  "database": "registration_test",
+  "scope": "real process termination; expired leases deliberately advanced in isolated DB; recovery observed, not elapsed lease-duration certification",
+  "results": [
+    {
+      "scenarioId": "R01",
+      "title": "关闭提交前进程终止、原业务回滚及任务租约恢复",
+      "relatedCaseIds": [
+        "TC-OPS-009",
+        "TC-CLOSE-010"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "sameJob": true,
+        "rollbackObserved": true,
+        "tokenAdvanced": true,
+        "oldSessionRejected": true
+      }
+    },
+    {
+      "scenarioId": "R02",
+      "title": "计费接收后确认前崩溃、双方重启、持久去重恢复",
+      "relatedCaseIds": [
+        "TC-OPS-004",
+        "TC-BILL-003",
+        "TC-BILL-004",
+        "TC-BILL-007"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "uniqueReceipts": 11,
+        "snapshotHashUnchanged": true,
+        "oldExternalReferencesUnchanged": true,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "scenarioId": "R03",
+      "title": "关闭完成重复请求不再结算",
+      "relatedCaseIds": [
+        "TC-CLOSE-009",
+        "TC-BILL-011"
+      ],
+      "status": "PASS",
+      "evidence": {
+        "sameJob": true,
+        "noNewBill": true
+      }
+    }
+  ]
+}

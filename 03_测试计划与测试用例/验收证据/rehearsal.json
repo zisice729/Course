@@ -1,0 +1,64 @@
+{
+  "executedAt": "2026-10-06T16:57:49.954Z",
+  "base": "http://127.0.0.1:8088",
+  "database": "registration_test",
+  "executor": "Codex browser automation; group manual acceptance remains pending",
+  "results": [
+    {
+      "scenarioId": "B01",
+      "title": "学生从页面完成首次4+2提交",
+      "relatedCaseIds": [
+        "TC-REG-003",
+        "TC-UI-002"
+      ],
+      "status": "PASS"
+    },
+    {
+      "scenarioId": "B02",
+      "title": "教师成绩页面保存及切换前未保存保护",
+      "relatedCaseIds": [
+        "TC-GRADE-001",
+        "TC-UI-007"
+      ],
+      "status": "PASS"
+    },
+    {
+      "scenarioId": "B03",
+      "title": "教务新增人员及按行重置密码",
+      "relatedCaseIds": [
+        "TC-PEOPLE-001",
+        "TC-PEOPLE-013",
+        "TC-UI-006"
+      ],
+      "status": "PASS"
+    },
+    {
+      "scenarioId": "B04",
+      "title": "页面关闭注册直至全部计费回执确认",
+      "relatedCaseIds": [
+        "TC-CLOSE-001",
+        "TC-UI-009",
+        "TC-UI-005"
+      ],
+      "status": "PASS"
+    },
+    {
+      "scenarioId": "B05",
+      "title": "关闭后的学生页面只读及成绩查询",
+      "relatedCaseIds": [
+        "TC-REG-014",
+        "TC-GRADE-006"
+      ],
+      "status": "PASS"
+    },
+    {
+      "scenarioId": "B06",
+      "title": "正常演示库仍OPEN且无脚本异常",
+      "relatedCaseIds": [
+        "TC-CI-003"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "pageErrors": []
+}

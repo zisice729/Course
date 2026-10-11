@@ -1,0 +1,20 @@
+# Local IDE metadata
+.idea/
+.vscode/
+
+# Generated/local runtime content (recreated by the project scripts)
+04_源代码/registration-system/.tools/
+04_源代码/registration-system/.runtime/
+04_源代码/registration-system/frontend/node_modules/
+04_源代码/registration-system/frontend/dist/
+04_源代码/registration-system/backend/target/
+04_源代码/registration-system/tests/results/
+04_源代码/registration-system/tests/.auth/
+
+# Local secrets and transient files
+*.log
+*.sqlite*
+.env
+__pycache__/
+*.py[cod]
+

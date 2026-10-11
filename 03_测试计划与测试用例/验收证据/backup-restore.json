@@ -1,0 +1,48 @@
+{
+  "executedAt": "2026-10-06T16:55:36.518682+00:00",
+  "status": "PASS",
+  "database": "registration_test",
+  "backupSha256": "13f2429acd27b6d334e16e240be1ec10e4298be15182ba0e32484b5c93f9511b",
+  "before": {
+    "counts": {
+      "student": 30,
+      "professor": 3,
+      "user_account": 34,
+      "semester": 2,
+      "catalog_snapshot": 2,
+      "offering": 18,
+      "schedule": 30,
+      "schedule_item": 36,
+      "enrollment": 104,
+      "grade": 60,
+      "close_job": 1,
+      "billing_record": 11,
+      "billing_outbox": 11,
+      "request_dedup": 0,
+      "audit_event": 15
+    },
+    "enrollmentFingerprint": "63d0df98787f0337d0f2f06b80d58687d6e411b3c1fee8cf8dde5860fdd61256"
+  },
+  "after": {
+    "counts": {
+      "student": 30,
+      "professor": 3,
+      "user_account": 34,
+      "semester": 2,
+      "catalog_snapshot": 2,
+      "offering": 18,
+      "schedule": 30,
+      "schedule_item": 36,
+      "enrollment": 104,
+      "grade": 60,
+      "close_job": 1,
+      "billing_record": 11,
+      "billing_outbox": 11,
+      "request_dedup": 0,
+      "audit_event": 15
+    },
+    "enrollmentFingerprint": "63d0df98787f0337d0f2f06b80d58687d6e411b3c1fee8cf8dde5860fdd61256"
+  },
+  "countsConsistent": true,
+  "scope": "SQL row-count and enrollment fingerprint round trip; not a timed RTO/RPO drill"
+}

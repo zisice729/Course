@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.java text eol=lf
+*.sql text eol=lf
+*.vue text eol=lf
+docs/evidence/** -text
+docs/evidence-v0.2/** -text
+*.png binary
+*.pdf binary
+*.docx binary
+*.pptx binary
+*.xlsx binary

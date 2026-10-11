@@ -1,0 +1,290 @@
+{
+  "executedAt": "2026-10-06T16:45:13.806207+00:00",
+  "base": "http://127.0.0.1:8082/api/v1",
+  "database": "registration_test",
+  "results": [
+    {
+      "caseId": "TC-AUTH-001",
+      "title": "三角色登录",
+      "status": "PASS",
+      "durationMs": 71,
+      "evidence": [
+        "STUDENT",
+        "PROFESSOR",
+        "REGISTRAR"
+      ]
+    },
+    {
+      "caseId": "TC-AUTH-002",
+      "title": "错误凭据拒绝",
+      "status": "PASS",
+      "durationMs": 15,
+      "evidence": "BAD_CREDENTIALS"
+    },
+    {
+      "caseId": "TC-SEC-002",
+      "title": "真实CSRF过滤链拒绝",
+      "status": "PASS",
+      "durationMs": 3,
+      "evidence": "CSRF_INVALID"
+    },
+    {
+      "caseId": "TC-SEC-001",
+      "title": "角色越权拒绝",
+      "status": "PASS",
+      "durationMs": 26,
+      "evidence": "FORBIDDEN"
+    },
+    {
+      "caseId": "TC-CAT-001",
+      "title": "冻结目录字段和ID字符串",
+      "status": "PASS",
+      "durationMs": 61,
+      "evidence": {
+        "classes": 12,
+        "firstId": "101",
+        "snapshot": "demo-autumn-v1"
+      }
+    },
+    {
+      "caseId": "TC-API-003",
+      "title": "分页及非法排序",
+      "status": "PASS",
+      "durationMs": 60,
+      "evidence": "default20,max100,sort whitelist"
+    },
+    {
+      "caseId": "TC-REG-001",
+      "title": "草稿不占名额",
+      "status": "PASS",
+      "durationMs": 104,
+      "evidence": "count=9; ACTIVE unchanged"
+    },
+    {
+      "caseId": "TC-REG-003",
+      "title": "首次4+2正式提交",
+      "status": "PASS",
+      "durationMs": 128,
+      "evidence": "4 ACTIVE; alternatives do not occupy seats"
+    },
+    {
+      "caseId": "TC-REG-016",
+      "title": "成功重放与异体冲突",
+      "status": "PASS",
+      "durationMs": 53,
+      "evidence": "same key/body replay before version; changed body409"
+    },
+    {
+      "caseId": "TC-REG-015",
+      "title": "旧版本拒绝",
+      "status": "PASS",
+      "durationMs": 44,
+      "evidence": "VERSION_CONFLICT"
+    },
+    {
+      "caseId": "TC-REG-006",
+      "title": "先修F拒绝且全量回滚",
+      "status": "PASS",
+      "durationMs": 243,
+      "evidence": "F fails; old ACTIVE intact"
+    },
+    {
+      "caseId": "TC-CON-001",
+      "title": "真实MySQL最后一席竞争",
+      "status": "PASS",
+      "durationMs": 405,
+      "evidence": {
+        "http": [
+          409,
+          200
+        ],
+        "count": 10,
+        "active": 10
+      }
+    },
+    {
+      "caseId": "TC-DB-008",
+      "title": "占位后异常全部回滚",
+      "status": "PASS",
+      "durationMs": 257,
+      "evidence": "all counts and new ACTIVE rolled back"
+    },
+    {
+      "caseId": "TC-GRADE-001",
+      "title": "历史名单合法成绩保存",
+      "status": "PASS",
+      "durationMs": 91,
+      "evidence": "own historical class updated"
+    },
+    {
+      "caseId": "TC-GRADE-003",
+      "title": "null不清除已有成绩",
+      "status": "PASS",
+      "durationMs": 81,
+      "evidence": "null skips existing B"
+    },
+    {
+      "caseId": "TC-GRADE-002",
+      "title": "非法成绩整批拒绝",
+      "status": "PASS",
+      "durationMs": 31,
+      "evidence": "E rejected"
+    },
+    {
+      "caseId": "TC-PEOPLE-001",
+      "title": "人员账号原子创建",
+      "status": "PASS",
+      "durationMs": 414,
+      "evidence": {
+        "id": "31",
+        "username": "s31",
+        "oneTimeDelivery": true,
+        "logicalDeleted": true
+      }
+    },
+    {
+      "caseId": "TC-PEOPLE-004",
+      "title": "当前关联拒绝删除",
+      "status": "PASS",
+      "durationMs": 24,
+      "evidence": "ACTIVE_RELATION_EXISTS"
+    },
+    {
+      "caseId": "TC-REG-RECREATE",
+      "title": "删除、草稿、重建仍须首次4+2",
+      "status": "PASS",
+      "durationMs": 321,
+      "evidence": "tombstone retains ordering time; draft cannot bypass 4+2 rebuild"
+    },
+    {
+      "caseId": "TC-API-INTEGER",
+      "title": "版本和选择顺序拒绝小数",
+      "status": "PASS",
+      "durationMs": 139,
+      "evidence": "fractional expectedVersion/order rejected"
+    },
+    {
+      "caseId": "TC-TEACH-ATOMIC",
+      "title": "授课集合原子修改与其他教师占用拒绝",
+      "status": "PASS",
+      "durationMs": 211,
+      "evidence": "conflict preserves prior assignments; unassigned offering can be added/released"
+    },
+    {
+      "caseId": "TC-GRADE-ROLLBACK",
+      "title": "成绩批量中途失败回滚",
+      "status": "PASS",
+      "durationMs": 57,
+      "evidence": "both grade values and versions unchanged"
+    },
+    {
+      "caseId": "TC-CON-006",
+      "title": "普通写持锁时关闭任务BLOCKED_BUSY",
+      "status": "PASS",
+      "durationMs": 835,
+      "evidence": "202 accepted; worker BLOCKED_BUSY; registration proceeds"
+    },
+    {
+      "caseId": "TC-CLOSE-010",
+      "title": "本地关闭失败业务全部回滚",
+      "status": "PASS",
+      "durationMs": 1124,
+      "evidence": "OPEN, old counts, no committed billing"
+    },
+    {
+      "caseId": "TC-CLOSE-001",
+      "title": "本地原子关闭和最终不变量",
+      "status": "PASS",
+      "durationMs": 1374,
+      "evidence": {
+        "attempts": [
+          {
+            "order": 1,
+            "reason": "ACTIVATED",
+            "studentId": "11",
+            "offeringId": "110"
+          },
+          {
+            "order": 2,
+            "reason": "NO_REPLACEABLE_PRIMARY",
+            "studentId": "11",
+            "offeringId": "106"
+          },
+          {
+            "order": 1,
+            "reason": "ACTIVATED",
+            "studentId": "12",
+            "offeringId": "110"
+          },
+          {
+            "order": 1,
+            "reason": "ACTIVATED",
+            "studentId": "1",
+            "offeringId": "105"
+          },
+          {
+            "order": 2,
+            "reason": "NO_REPLACEABLE_PRIMARY",
+            "studentId": "1",
+            "offeringId": "106"
+          },
+          {
+            "order": 1,
+            "reason": "ACTIVATED",
+            "studentId": "14",
+            "offeringId": "107"
+          },
+          {
+            "order": 2,
+            "reason": "ACTIVATED",
+            "studentId": "14",
+            "offeringId": "108"
+          },
+          {
+            "order": 1,
+            "reason": "ACTIVATED",
+            "studentId": "17",
+            "offeringId": "110"
+          }
+        ],
+        "studentCount": 14,
+        "sourceVersion": "demo-autumn-v1",
+        "algorithmVersion": "LEVELING_V1_1",
+        "cancelledClasses": 4,
+        "confirmedClasses": 8
+      }
+    },
+    {
+      "caseId": "TC-BILL-003",
+      "title": "远端接收丢响应持久去重",
+      "status": "PASS",
+      "durationMs": 7210,
+      "evidence": {
+        "uniqueReceipts": 14,
+        "localBills": 14,
+        "state": "COMPLETE"
+      }
+    },
+    {
+      "caseId": "TC-GRADE-007",
+      "title": "关闭后仍可历史评分",
+      "status": "PASS",
+      "durationMs": 58,
+      "evidence": "own historical class updated"
+    },
+    {
+      "caseId": "TC-REG-014",
+      "title": "关闭后正式写拒绝",
+      "status": "PASS",
+      "durationMs": 38,
+      "evidence": "REGISTRATION_CLOSED"
+    },
+    {
+      "caseId": "TC-AUTH-003",
+      "title": "退出后会话失效",
+      "status": "PASS",
+      "durationMs": 5,
+      "evidence": "old session rejected"
+    }
+  ]
+}

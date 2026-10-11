@@ -1,0 +1,46 @@
+{
+  "executedAt": "2026-10-06T16:57:56.747Z",
+  "results": [
+    {
+      "title": "学生浏览器登录、远程搜索与课程目录",
+      "status": "PASS",
+      "durationMs": 2249
+    },
+    {
+      "title": "浏览器保存4+2草稿，刷新后恢复",
+      "status": "PASS",
+      "durationMs": 367
+    },
+    {
+      "title": "浏览器正式提交，草稿调整不修改正式课表",
+      "status": "PASS",
+      "durationMs": 357
+    },
+    {
+      "title": "学生成绩页面与服务器端角色拒绝",
+      "status": "PASS",
+      "durationMs": 224
+    },
+    {
+      "title": "教师授课页面、名单与成绩页面",
+      "status": "PASS",
+      "durationMs": 804
+    },
+    {
+      "title": "教务人员分页、SSN脱敏与搜索",
+      "status": "PASS",
+      "durationMs": 857
+    },
+    {
+      "title": "关闭和计费页面、刷新路由、注销",
+      "status": "PASS",
+      "durationMs": 394
+    },
+    {
+      "title": "浏览器无未捕获脚本异常",
+      "status": "PASS",
+      "durationMs": 1
+    }
+  ],
+  "pageErrors": []
+}
